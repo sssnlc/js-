@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //   let Person = {
+    //     hand: 2,
+    //     footer: 2
+    //   }
+    //   function Woman () {
+
+    //   }
+
+    //   //原型继承上Person的属性
+    //   Woman.prototype = Person
+    //   Woman.prototype.constructor = Woman
+    //   console.dir(Woman);  //此时我们可以看到对象原型上就有了Person的属性了
+    //   console.log(Woman.prototype.hand); //拿到继承的属性
+    // // 但是当我们想给women一些特有的属性，此时就会发现，Man里也有了这个属性，因为我们修改了共同的对象
+    //   Woman.prototype.body=function(){
+    //     console.log("生宝贝");
+    //   }
+
+    //   function Man () {
+
+    //   }
+    //   Man.prototype = Person
+    //   Man.prototype.constructor = Man
+    //   console.dir(Man);
+
+
+    function Person () {
+      this.hand = 2
+      this.footer = 2
+    }
+    function Woman () {
+
+    }
+
+    //原型继承上Person的属性
+    Woman.prototype = new Person()
+    Woman.prototype.constructor = Woman
+    console.dir(Woman);  //此时我们可以看到对象原型上就有了Person的属性了
+    console.log(Woman.prototype.hand); //拿到继承的属性
+    // 但是当我们想给women一些特有的属性，此时由于两个使用的是不同new的对象，互不干涉
+    Woman.prototype.body = function () {
+      console.log("生宝贝");
+    }
+
+    function Man () {
+
+    }
+    Man.prototype = new Person()
+    Man.prototype.constructor = Man
+    console.dir(Man);
+    const m=new Man()
+    console.log(m.hand);
+  </script>
+</body>
+
+</html>

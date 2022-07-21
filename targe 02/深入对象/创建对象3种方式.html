@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 字面量
+    const zimianl = {
+      name: 'lc'
+    }
+    // Object对象
+    const Ob = new Object({ name: 'lc' })
+    // 构造函数
+    // 创建构造函数
+
+    // function Goods (name, price, count, task) {
+    //   this.name = name
+    //   this.price = price
+    //   this.count = count
+    //   this.task = task
+    // }
+
+    // 两种形式都可以
+    let Goods = function (name, price, count, task) {
+      this.name = name
+      this.price = price
+      this.count = count
+      this.task = task
+    }
+    Goods.zz = function () {
+      console.log("静态成员");
+    }
+    const xiaomi = new Goods("小米", 1999, 10, function () { console.log("性价比之王"); })
+    const huawei = new Goods("华为", 3999, 59)
+    const vivo = new Goods("vivo", 1888, 100)
+    console.log(xiaomi);
+    console.log(huawei);
+    console.log(vivo);
+  </script>
+</body>
+
+</html>

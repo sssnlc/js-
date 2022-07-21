@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 第一种格式
+    // function b1 () {
+    //   let B = 10
+    //   function b2 () {
+    //     console.log(B)
+    //   }
+    //   return b2
+    // }
+
+    // b1()()
+
+    // 第二种
+    // function b1 () {
+    //   let B = 10
+    //   return function () {
+    //     console.log(B);
+    //   }
+    // }
+    // b1()()
+
+    // 第三种
+    // function b1 () {
+    //   let B = 10
+    //   return function () {
+    //     return B
+    //   }
+    // }
+    // let zhi = b1()()
+    // console.log(zhi);
+
+    // 应用：计算函数调用次数，实现数据的私有
+    function fn () {
+      let i = 0
+      return function () {
+        console.log(++i);
+      }
+    }
+
+    let count = fn()
+    count()
+    count()
+    count()
+  </script>
+</body>
+
+</html>

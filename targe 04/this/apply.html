@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      name: "LC"
+    }
+
+    function dui (...arr) {
+      // 穿过来的是数组，但是是一个个拆开的，所以我们可以使用剩余参数，给他封装成数组
+      console.log(this.name);
+      console.log(arr);
+      console.log(arr[0]);
+    }
+    dui.apply(obj, [1, 2])
+
+    // 我们还可以用来求数组最值
+    // apply和call的返回值就是函数的返回值
+    let m = Math.max.apply(null, [1, 2, 3, 4])
+    console.log(m);
+  </script>
+</body>
+
+</html>

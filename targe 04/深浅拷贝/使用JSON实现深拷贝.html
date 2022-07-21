@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      name: "lc",
+      age: 21,
+      happy: {
+        do: "code"
+      },
+      family: ['father', 'mother', 'sister']
+    }
+
+    // 我们先把对象转化成字符串，这个时候字符串只是个基础数据类型，
+    // 丢失了原来对象的地址，再转化成对象，此时就是一个新对象了
+    let New = JSON.parse(JSON.stringify(obj))
+    obj.happy.do = 'games'
+    console.log(New);
+  </script>
+</body>
+
+</html>

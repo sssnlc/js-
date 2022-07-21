@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function Person (name, age) {
+    //   this.name = name
+    //   this.age = age
+    //   this.eat = function () {
+    //     console.log("吃饭");
+    //   }
+    // }
+
+    // const Person1 = new Person('lc', 21)
+    // const Person2 = new Person('zyj', 18)
+    // console.log(Person1.eat===Person2.eat)
+    //存在一个问题,在构造函数里开辟一个引用属性类型时，
+    // 每创建一个对象就会开辟一个内存，内容一样，浪费内存
+  
+    function Person (name, age) {
+      this.name = name
+      this.age = age
+    }
+    Person.prototype.eat=function(){
+      console.log(this);
+    }
+
+    const Person1 = new Person('lc', 21)
+    const Person2 = new Person('zyj', 18)
+    console.log(Person1.eat===Person2.eat)
+    Person1.eat()
+    Person2.eat()
+  
+  
+
+    
+  
+  </script>
+</body>
+
+</html>

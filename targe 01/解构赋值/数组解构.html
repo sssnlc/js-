@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 从前我们需要给数组的值赋值为变量时
+    let shu = [100, 1, '哇喔']
+    let max1 = shu[0]
+    let min1 = shu[1]
+    let omg1 = shu[2]
+    console.log(max1);
+    console.log(min1);
+    console.log(omg1);
+    // // es6
+    let [max2, min2, omg2] = [100, 1, '哇喔']
+    console.log(max2);
+    console.log(min2);
+    console.log(omg2);
+
+    //左多右少
+    let [max, min, One, Two] = [1, 2, 3]
+    console.log(Two); //为underfain
+    // 左少右多  ，无影响
+    let [max3, min3] = [1, 2, 3, 4]
+
+    // 和剩余参数
+    let [max4, min4, ...data] = [1, 2, 3, 4]
+    console.log(data[0]);
+    console.log(data[1]);
+
+    // 设置默认值，防止传入underfind
+    let [max5 = 1, min5 = 2, hh = "哈哈"] = [3, 4]
+    console.log(hh);
+
+    // 按需导入
+    let [max6, min6, , wuhu] = [1, 2, , "芜湖"]
+    console.log(wuhu);
+  </script>
+</body>
+
+</html>

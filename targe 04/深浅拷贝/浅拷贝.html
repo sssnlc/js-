@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let Person = {
+      eye: 2,
+      head: 1,
+      lc: {
+        name: 'lc',
+        age: 21
+      }
+    }
+
+    // 浅拷贝
+    let qkb = { ...Person }
+    // Object.assign(qkb,Person)  另一种浅拷贝方式
+    Person.head = 3   //修改Person的基础类型属性
+    console.log(qkb); //我们发现浅拷贝的对象，并没有受到影响
+
+    Person.lc.name = 'LC' //修改Person的引用数据类型里的属性
+    //我们发现我们拷贝过来的引用数据类型里的属性也变化了，这就是浅拷贝
+    // 也就是当时浅拷贝时，拷贝引用类型只是拷贝了地址，并没有拷贝里面的属性
+    console.log(qkb);   
+  </script>
+</body>
+
+</html>

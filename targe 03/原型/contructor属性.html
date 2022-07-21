@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person () {
+    }
+
+    console.dir(Person.prototype.constructor === Person);   //true
+
+    // 赋值多个属性方法
+    Person.prototype.sing = function () {
+      console.log("sing");
+    }
+    Person.prototype.dance = function () {
+      console.log("dance");
+    }
+
+    // 当我们赋值多个属性方法时，可以直接赋值一个对象
+    Person.prototype = {
+      // 加上
+      constructor: Person,
+      sing: function () {
+        console.log("sing");
+      },
+      dance: function () {
+        console.log("dance");
+      }
+    }
+    // 此时打印原型对象，就没有了constructor指向构造函数了，
+    // 就不知道这个原型是哪一个构造函数里的了，所以需要加上
+    console.log(Person.prototype);
+  </script> 
+</body>
+
+</html>

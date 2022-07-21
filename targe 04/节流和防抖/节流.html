@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    // 初始值
+    let i = 1
+    // 具体要实现的函数
+    let box = document.querySelector('.box')
+    let mouseMove = function () {
+      this.innerHTML = i++
+    }
+    // 改变this
+    let mouse = mouseMove.bind(box)
+
+    // 节流函数
+    let jieliu = function (fn, t) {
+      // 开始时间
+      let start = 0
+      return function () {
+        // 结束时间
+        let end = Date.now()
+        if (end - start >= t) {
+          fn()
+          // 当调用完一次后，马上将这一次的结束时间赋值给下一次的开始时间
+          start = end
+        }
+      }
+    }
+
+    box.addEventListener('mousemove', jieliu(mouse, 500))
+  </script>
+</body>
+
+</html>

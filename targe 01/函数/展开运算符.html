@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // 数组展开
+    let shu1 = [1, 2, 3, 4]
+    let shu2 = [1, 2, 3, 4]
+    Math.max(...shu1, ...shu2)
+    let shuz = [...shu1, ...shu2]
+    console.log(...shuz);
+
+    // 对象展开
+    let duix = {
+      a: 10,
+      b: 20,
+      c: 30
+    }
+
+    let duix2 = {
+      ...duix
+    }
+
+    console.log(duix2)
+  </script>
+</body>
+
+</html>

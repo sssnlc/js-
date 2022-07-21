@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let shuzu = {
+      name: 'lc',
+      age: 21
+    }
+    let shuzu2 = {
+      hobby () {
+        console.log('sleep');
+      }
+    }
+    // 数组也可以使用，数组也是对象，键打印下标 let shuzu = [1, 2, 3, "a"]
+    // keys
+    console.log(Object.keys(shuzu));
+    // values
+    console.log(Object.values(shuzu));
+    // 拷贝：可以用来将一个数组添加到另一个数组中  assign(收，发)
+
+    Object.assign(shuzu2, shuzu)
+    console.log(shuzu2);
+
+  </script>
+</body>
+
+</html>

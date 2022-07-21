@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // split 将字符串转换成数组  与join相反
+    let str = 'hello,world'
+    let strArr = str.split(',')
+    console.log(strArr);
+
+    // substring(开头索引[,结束索引]) 截取字符串
+    let str2 = '我该怎么截取呢？这样子吧'
+    let str2Arr = str2.substring(8)
+    console.log(str2Arr);
+
+    //includes（'子字符'[,开始索引]） ：字符串是否包含某子串
+    let str3 = 'To be, or not to be, that is the question.'
+    let bo = str3.includes('or')       //true
+    let bo2 = str3.includes('To be', 1) //false 加上索引开始
+    let bo3 = str3.includes('to Be')   // false：不忽略大小写
+    console.log(bo);
+    console.log(bo2);
+    console.log(bo3);
+
+    //startsWith（'开始字符'[,开始索引]）：判断是不是以某个字符开头
+    let str4 = 'To be, or not to be, that is the question.'
+    let S4bo = str4.startsWith('To be')
+    let S4bo2 = str4.startsWith('To be', 1)
+    console.log(S4bo);
+    console.log(S4bo2);
+  </script>
+</body>
+
+</html>

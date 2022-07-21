@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let shu = [1, 2, 3, 4]
+    // let sum = shu.reduce(function (sum,item) {
+    //   return sum + item
+    // },0)
+    // 箭头函数简写
+    let sum = shu.reduce((sum, item) => sum + item, 0)
+    console.log(sum);
+
+
+
+    // every
+
+    let eShu = shu.every(function (item) {
+      return item > 1
+    })
+
+    console.log(eShu);
+
+    // join
+    let str = shu.join('WW')
+    console.log(str);
+
+
+    const spec = { size: '40cm*40cm', color: '黑色' }
+    let an = Object.values(spec)
+    let anli = an.join('/')
+    console.log(anli);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    // 初始值
+    let i = 1
+    // 具体要实现的函数
+    let box = document.querySelector('.box')
+    let mouseMove = function () {
+      this.innerHTML = i++
+    }
+    // 改变this
+    let mouse = mouseMove.bind(box)
+
+    // 防抖函数
+    let fangdou = function (fn, t) {
+      // 开始时间
+      let dsq
+      return function () {
+        // 如果有定时器就清除
+        if (dsq) clearTimeout(dsq)
+        // 没有的话就创建定时器，但是如果在t时间内再次触发函数，
+        // 这个定时器同样也会被清除，里面的fn（）函数还是没有执行
+        dsq = setTimeout(function () {
+          fn()
+        }, t)
+
+      }
+    }
+
+    box.addEventListener('mousemove', fangdou(mouse, 500))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 提升了函数作用域
+    fn()
+    function fn () {
+      console.log(1);
+    }
+
+
+    // 函数表达式 是赋值不是声明
+    // ftn()   不能提前调用
+    // console.log(ftn);   变量提升可以打印undefined
+    //此时变量提升
+    //  var fth  然后调用函数fth()   最后才是赋值fth=function(){}  ,所以在函数表达式里不能提前调用
+    var ftn = function () {
+      console.log(2);
+    }
+
+  </script>
+</body>
+
+</html>

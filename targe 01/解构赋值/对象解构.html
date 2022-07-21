@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const pig = { name: "佩奇", age: 2 }
+    // 案例1
+    const { name, age } = pig
+    console.log(name);
+    console.log(age);
+
+    // 案例2
+    // 当变量要跟对象里的属性方法不同名时，旧名：新名
+    const { name: uname, age: uage } = pig
+    console.log(uname);
+    console.log(uage);
+
+    // 案例3  数组对象
+    const goods = [
+      {
+        goodsName: '小米',
+        price: 999
+      }
+    ]
+
+    const [{ goodsName, price }] = goods
+    console.log(goodsName);
+    console.log(price);
+
+    // 案例4   多维对象解构
+    const a = { One: { OneA: 1, OneB: 2 }, Two: { TwoA: 10, TwoB: 20 } }
+
+    const { One: { OneA, OneB }, Two: { TwoA, TwoB } } = a
+    console.log(OneA);
+    console.log(OneB);
+    console.log(TwoA);
+    console.log(TwoB);
+  </script>
+</body>
+
+</html>
